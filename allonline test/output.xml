@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.11.9 on win32)" generated="2025-01-23T17:43:53.283059" rpa="false" schemaversion="5">
+<suite id="s1" name="Allonline Success" source="C:\Users\mikky\Desktop\robotframework_workshop\allonline test\allonline_success.robot">
+<test id="s1-t1" name="ลูกค้าสั่งซื้อสินค้าสำเร็จ" line="11">
+<kw name="เปิดเว็บเบราว์เซอร์">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:43:53.545694" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-23T17:43:53.545694" elapsed="1.640648"/>
+</kw>
+<status status="PASS" start="2025-01-23T17:43:53.544636" elapsed="1.641706"/>
+</kw>
+<kw name="เข้า AllOnline">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:43:55.187340" level="INFO">Opening url 'https://www.allonline.7eleven.co.th/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-23T17:43:55.187340" elapsed="9.051095"/>
+</kw>
+<status status="PASS" start="2025-01-23T17:43:55.186342" elapsed="9.052093"/>
+</kw>
+<kw name="ค้นหาไฮยีน">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:04.240435" level="INFO">Typing text 'ไฮยีน เอ็กซ์เพิร์ทแคร์ น้ำยาปรับผ้านุ่ม ขาวมิลค์กี้ 1100 มล.' into text field 'name=q'.</msg>
+<arg>${SEARCH_BOX}</arg>
+<arg>${PRODUCT}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-23T17:44:04.240435" elapsed="0.687806"/>
+</kw>
+<arg>${PRODUCT}</arg>
+<status status="PASS" start="2025-01-23T17:44:04.239438" elapsed="0.689801"/>
+</kw>
+<kw name="กดปุ่ม Enter">
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:04.929239" level="INFO">Sending key(s) ('RETURN',) to page.</msg>
+<msg time="2025-01-23T17:44:04.930236" level="INFO">Pressing special key RETURN to browser.</msg>
+<msg time="2025-01-23T17:44:04.930236" level="INFO">Releasing special key RETURN.</msg>
+<arg>None</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-01-23T17:44:04.929239" elapsed="5.207300"/>
+</kw>
+<status status="PASS" start="2025-01-23T17:44:04.929239" elapsed="5.207300"/>
+</kw>
+<kw name="ตรวจสอบผลการค้นหา">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${SEARCH_RESULT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-23T17:44:10.137710" elapsed="0.014601"/>
+</kw>
+<arg>${PRODUCT}</arg>
+<status status="PASS" start="2025-01-23T17:44:10.137710" elapsed="0.014601"/>
+</kw>
+<kw name="เลือกไฮยีน">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:10.153322" level="INFO">Clicking element '//*[@id="page"]/div[2]/div[2]/div/div/div[2]/div/div/div/div/div/div[3]/div[1]/div/a[2]/div'.</msg>
+<arg>//*[@id="page"]/div[2]/div[2]/div/div/div[2]/div/div/div/div/div/div[3]/div[1]/div/a[2]/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-23T17:44:10.153322" elapsed="5.313705"/>
+</kw>
+<status status="PASS" start="2025-01-23T17:44:10.153322" elapsed="5.313705"/>
+</kw>
+<kw name="ตรวจสอบสินค้าว่าเป็น ไฮยีน เอ็กซ์เพิร์ทแคร์ น้ำยาปรับผ้านุ่ม ขาวมิลค์กี้ 1100 มล. ราคาต่อชิ้น 119 บาท ได้รับคะแนนต่อชิ้น 33 คะแนน">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${PRODUCT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-23T17:44:15.468034" elapsed="0.015686"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:15.504401" level="INFO">Element '//*[@id="article-form"]/div[2]/span/div/div[1]/span' contains text '฿ 119'.</msg>
+<arg>//*[@id="article-form"]/div[2]/span/div/div[1]/span</arg>
+<arg>฿ 119</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-01-23T17:44:15.483720" elapsed="0.020681"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:15.519657" level="INFO">Element '//*[@id="article-form"]/div[1]/div[3]/div/div[2]/div/span/span' contains text 'คุณจะได้รับ 33 คะแนน'.</msg>
+<arg>//*[@id="article-form"]/div[1]/div[3]/div/div[2]/div/span/span</arg>
+<arg>คุณจะได้รับ 33 คะแนน</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-01-23T17:44:15.504401" elapsed="0.015256"/>
+</kw>
+<status status="PASS" start="2025-01-23T17:44:15.467027" elapsed="0.052630"/>
+</kw>
+<kw name="เพิ่มจำนวนสินค้าที่ต้องการซื้อ 10 ชิ้น">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:15.519657" level="INFO">Typing text '10' into text field '//*[@id="article-form"]/div[2]/div[2]/div[1]/input'.</msg>
+<arg>//*[@id="article-form"]/div[2]/div[2]/div[1]/input</arg>
+<arg>10</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-23T17:44:15.519657" elapsed="0.079947"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:15.600628" level="INFO">Clicking element '//*[@id="article-form"]/div[2]/div[2]/div[4]/div[2]/button'.</msg>
+<arg>//*[@id="article-form"]/div[2]/div[2]/div[4]/div[2]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-23T17:44:15.599604" elapsed="2.064085"/>
+</kw>
+<status status="PASS" start="2025-01-23T17:44:15.519657" elapsed="2.144032"/>
+</kw>
+<kw name="ล็อกอิน">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:17.665039" level="INFO">Typing text 'mikkyrz.suw@gmail.com' into text field 'name=email'.</msg>
+<arg>name=email</arg>
+<arg>mikkyrz.suw@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-23T17:44:17.665039" elapsed="0.124415"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:17.789454" level="INFO">Typing text '0866796097' into text field 'name=password'.</msg>
+<arg>name=password</arg>
+<arg>0866796097</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-23T17:44:17.789454" elapsed="0.079500"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:17.870078" level="INFO">Clicking element '//*[@id="__next"]/div/div/div[2]/div[2]/div/div/div/div[6]/a[1]'.</msg>
+<arg>//*[@id="__next"]/div/div/div[2]/div[2]/div/div/div/div[6]/a[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-23T17:44:17.870078" elapsed="0.081983"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>สมัครสมาชิกวันนี้ รับสิทธิพิเศษมากมาย</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-23T17:44:17.952061" elapsed="2.720080"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:20.672141" level="INFO">Clicking element '//*[@id="__next"]/div/div/div[2]/div[2]/div/div/div[3]/div/button[2]'.</msg>
+<arg>//*[@id="__next"]/div/div/div[2]/div[2]/div/div/div[3]/div/button[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-23T17:44:20.672141" elapsed="0.056652"/>
+</kw>
+<status status="PASS" start="2025-01-23T17:44:17.663689" elapsed="3.065104"/>
+</kw>
+<kw name="จัดส่งตามที่อยู่">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${PRODUCT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-23T17:44:20.730210" elapsed="10.012060"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:30.742270" level="INFO">Clicking element 'id=btn-accept-gdpr'.</msg>
+<arg>id=btn-accept-gdpr</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-23T17:44:30.742270" elapsed="6.656857"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:37.399127" level="INFO">Clicking element '//*[@id="address-tabs"]/ul/li[2]/a'.</msg>
+<arg>//*[@id="address-tabs"]/ul/li[2]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-23T17:44:37.399127" elapsed="0.119717"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ที่อยู่ในการจัดส่งสินค้า</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-23T17:44:37.518844" elapsed="0.019271"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:37.538115" level="INFO">Clicking element '//*[@id="addressbook"]/div/div[1]/span/button'.</msg>
+<arg>//*[@id="addressbook"]/div/div[1]/span/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-23T17:44:37.538115" elapsed="0.792868"/>
+</kw>
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>id=formatted-location</arg>
+<arg>2 ตำบล บึงคำพร้อย อำเภอลำลูกกา ปทุมธานี 12150 ประเทศไทย</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-01-23T17:44:38.330983" elapsed="2.942786"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:41.273769" level="INFO">Clicking element 'id=selected-location'.</msg>
+<arg>id=selected-location</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-23T17:44:41.273769" elapsed="0.058722"/>
+</kw>
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>id=conf-dif-addr</arg>
+<arg>ยืนยันตามที่อยู่ที่กรอกไว้</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-01-23T17:44:41.333833" elapsed="0.240578"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:41.575488" level="INFO">Clicking element 'id=conf-dif-addr'.</msg>
+<arg>id=conf-dif-addr</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-23T17:44:41.575488" elapsed="0.083143"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>id=continue-payment-btn</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-01-23T17:44:41.658631" elapsed="0.298732"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=continue-payment-btn</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-23T17:44:41.957363" elapsed="0.011764"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:41.970131" level="INFO">Clicking element 'id=continue-payment-btn'.</msg>
+<arg>id=continue-payment-btn</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-23T17:44:41.969127" elapsed="3.100055"/>
+</kw>
+<status status="PASS" start="2025-01-23T17:44:20.728793" elapsed="24.341394"/>
+</kw>
+<kw name="ชำระเงินด้วยทรูมันนี่วอลเลต และตรวจสอบว่าได้สินค้า 10 ชิ้นในราคา 1190 บาท ค่าจัดส่งฟรี">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>วิธีการชำระเงิน</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-23T17:44:45.070187" elapsed="0.010859"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:45.098269" level="INFO">Element '//*[@id="stepModel"]/div[1]/div[2]/div[2]/table/tbody[1]/tr[3]/td[3]' contains text '10'.</msg>
+<arg>//*[@id="stepModel"]/div[1]/div[2]/div[2]/table/tbody[1]/tr[3]/td[3]</arg>
+<arg>10</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-01-23T17:44:45.081046" elapsed="0.017223"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:45.111466" level="INFO">Element '//*[@id="stepModel"]/div[1]/div[2]/div[2]/table/tbody[1]/tr[3]/td[4]' contains text '฿ 1,190'.</msg>
+<arg>//*[@id="stepModel"]/div[1]/div[2]/div[2]/table/tbody[1]/tr[3]/td[4]</arg>
+<arg>฿ 1,190</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-01-23T17:44:45.098269" elapsed="0.013197"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:45.124587" level="INFO">Element '//*[@id="js-invoice-details-tbody"]/tr[2]/td[2]/b' contains text 'ฟรี'.</msg>
+<arg>//*[@id="js-invoice-details-tbody"]/tr[2]/td[2]/b</arg>
+<arg>ฟรี</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-01-23T17:44:45.111466" elapsed="0.013121"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:45.138531" level="INFO">Element 'id=totalAmount' contains text '฿ 1,190'.</msg>
+<arg>id=totalAmount</arg>
+<arg>฿ 1,190</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-01-23T17:44:45.124587" elapsed="0.013944"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:45.138531" level="INFO">Clicking element '//*[@id="payment-options"]/div[2]/button'.</msg>
+<arg>//*[@id="payment-options"]/div[2]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-23T17:44:45.138531" elapsed="0.078930"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-23T17:44:50.218751" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-23T17:44:45.217461" elapsed="5.001290"/>
+</kw>
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>id=COUNTERSERVICE_TMW-tab</arg>
+<arg>ใส่เบอร์โทรศัพท์</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-01-23T17:44:50.218751" elapsed="0.019864"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:50.239743" level="INFO">Typing text '0811034067' into text field 'id=checkoutData.paymentData.trueMoneyMobileNumber'.</msg>
+<arg>id=checkoutData.paymentData.trueMoneyMobileNumber</arg>
+<arg>0811034067</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-23T17:44:50.238615" elapsed="0.090994"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-23T17:44:50.329609" level="INFO">Clicking element '//*[@id="stepModel"]/div[1]/div[2]/footer/div/div/button'.</msg>
+<arg>//*[@id="stepModel"]/div[1]/div[2]/footer/div/div/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-23T17:44:50.329609" elapsed="0.082861"/>
+</kw>
+<status status="PASS" start="2025-01-23T17:44:45.070187" elapsed="5.343415"/>
+</kw>
+<status status="PASS" start="2025-01-23T17:43:53.543499" elapsed="56.870103"/>
+</test>
+<status status="PASS" start="2025-01-23T17:43:53.285069" elapsed="57.128533"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Allonline Success">Allonline Success</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
